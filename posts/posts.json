@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "slug": "week-1-kickoff",
+      "title": "Week 1 & 2: Project Kickoff + Design Direction",
+      "subtitle": "Setting the foundation — what it is, gripes with the offical app, tech stack desisions and trifles, and the first wireframes.",
+      "excerpt": "The official Spearhead app works, technically, but it could be so much better. Here's how the project started.",
+      "date": "2026-04-11",
+      "tag": "Kickoff & Design",
+      "hasVideo": false
+    },
+    {
+      "slug": "week-3-sqlflite",
+      "title": "Week 3 & 4: Learning flutter + Database hookup",
+      "subtitle": "Hooking it all up - with the tech stack decided it was time to learn flutter and setup SQLite",
+      "excerpt": "Drawing a button on screen was easy, hooking up a database proved more difficult than anticipated. Here's what happened...",
+      "date": "2026-05-09",
+      "tag": "Databases & Learning",
+      "hasVideo": false
+    }
+  ]
+}

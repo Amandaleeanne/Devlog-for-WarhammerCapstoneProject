@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Spearhead Companion Dev Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/post.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">⚔</span>
+      <span class="brand-text">Spearhead <em>Companion</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Dev Log</a>
+      <a href="about.html" class="nav-link active">About</a>
+    </div>
+  </nav>
+
+  <article class="post-article">
+    <header class="post-header">
+      <div class="post-meta-top">
+        <span class="post-tag">About</span>
+      </div>
+      <h1 class="post-title">About This Project</h1>
+      <p class="post-subtitle">What is the Spearhead Companion, and why does it exist?</p>
+    </header>
+
+    <div class="post-body">
+      <p><u>Warhammer Age of Sigmar: Spearhead</u> is a fast-play format for AOS, and is a fantastic entrypoint into the large world/gameplay of Warhammer as it has a smaller and fixed roster.
+        AOS has an official companion app to reference, but its UI leaves a lot to be desired.</p>
+
+      <p>The capstone project's goal is about solving a real-world problem with something I would want to use. Featuring a cleaner flow and less confusing navigation to a spearhead army,
+        quick and easy references for faster gameplay, and a UI/UX that feels modern and not something from the 2000's.</p>
+
+      <p><u><em>This blog</em> is the documentation</u> of how I build a Warhammer companion app using Flutter/Dart, SQLite, and many many hours of ""gently"" screaming at the debugger the old-fashioned way -<strong> No AI code</strong>.</p>
+
+      <h2>The Goals</h2>
+      <ul>
+        <li>Improve the UI/UX flow compared to the official application</li>
+        <li>Support full Spearhead roster browsing and selection</li>
+        <li>Provide an in-game companion with health tracking, ability reminders, and round tracking</li>
+        <li>Add a few extra QOL features such as Favorites and a VS mode</li>
+        <li>Deploy as a mobile, desktop, and web application so anyone can use it</li>
+      </ul>
+
+      <h2>The Stack</h2>
+      <p> The app is being built with the amazing <a href="https://flutter.dev/">Flutter</a>. A cross-platform native UI development kit backed by Dart and made by Google.
+        Data is sourced from publicly available Spearhead PDF rules and maintained in a local relational database using <a href="https://sqlite.org/">SQLite</a>.</p>
+
+      <h2>This Blog</h2>
+      <p>This devlog tracks weekly/Bi-weekly progress on the project. Highlighting design decisions, technical challenges, screenshots, and video demos as the weeks progress. 
+        Posts are written in Markdown and committed directly to the repository. Feel free to "Giscus" on any post I make!</p>
+        <br>
+        <a href="post.html?slug=week-1-kickoff" class="post-nav-link">Start reading the journey -></a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-back">← Back to Dev Log</a>
+      <span class="footer-divider">·</span>
+      <span>Spearhead Companion</span>
+      <span class="footer-divider">·</span>
+      <span><a href="https://www.linkedin.com/in/amandaleeanne-schock-86422a244/" class="footer-back">LinkedIn</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
