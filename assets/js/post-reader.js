@@ -44,10 +44,21 @@
   const postTitle = (meta && meta.title) || slug;
   document.title = `${postTitle} — Spearhead Companion Dev Blog`;
 
-  // Configure Marked
-  marked.setOptions({
+  // Configure Marked with heading IDs for anchor navigation
+  marked.use({
     gfm: true,
     breaks: false,
+    renderer: {
+      heading({ text, depth }) {
+        const slug = text
+          .toLowerCase()
+          .replace(/<[^>]*>/g, '')
+          .replace(/[^\w\s-]/g, '')
+          .trim()
+          .replace(/\s+/g, '-');
+        return `<h${depth} id="${slug}">${text}</h${depth}>\n`;
+      }
+    }
   });
 
   // Process video tokens BEFORE markdown parsing
@@ -60,10 +71,10 @@
   html = reinjectVideos(html, videoBlocks);
 
   // Build the article DOM
-  const tag   = (meta && meta.tag)  || 'Update';
-  const date  = (meta && meta.date) ? Blog.formatDate(meta.date) : '';
-  const rt    = Blog.readTime(md);
-  const sub   = (meta && meta.subtitle) || '';
+  const tag      = (meta && meta.tag)  || 'Update';
+  const date     = (meta && meta.date) ? Blog.formatDate(meta.date) : '';
+  const rt       = Blog.readTime(md);
+  const sub      = (meta && meta.subtitle) || '';
   const prevPost = findAdjacentPost(posts, slug, -1);
   const nextPost = findAdjacentPost(posts, slug, +1);
 
@@ -98,7 +109,7 @@
 
 /* ─── VIDEO TOKEN PROCESSING ─────────────────────────── */
 
-const VIDEO_PLACEHOLDER = '___VIDEO_BLOCK_%d___';
+const VIDEO_PLACEHOLDER = 'VIDEOBLOCKSLOT%d';
 const VIDEO_REGEX = /\[video:([^\]\n]+)\]/g;
 
 function extractVideoTokens(md) {
@@ -114,7 +125,6 @@ function extractVideoTokens(md) {
 }
 
 function parseVideoToken(raw) {
-  // Extract optional caption:"..."
   const captionMatch = raw.match(/caption:"([^"]+)"/);
   const caption = captionMatch ? captionMatch[1] : null;
   const src = raw.replace(/caption:"[^"]+"\s*/g, '').trim();
@@ -122,8 +132,10 @@ function parseVideoToken(raw) {
 }
 
 function reinjectVideos(html, videoBlocks) {
-  return html.replace(/___VIDEO_BLOCK_(\d+)___/g, (match, idx) => {
-    const block = videoBlocks[parseInt(idx, 10)];
+  // Marked wraps placeholders in <p> tags, so we match both cases
+  return html.replace(/<p>\s*VIDEOBLOCKSLOT(\d+)\s*<\/p>|VIDEOBLOCKSLOT(\d+)/g, (match, idx1, idx2) => {
+    const idx = parseInt(idx1 !== undefined ? idx1 : idx2, 10);
+    const block = videoBlocks[idx];
     if (!block) return '';
     return buildVideoHTML(block.src, block.caption);
   });
@@ -146,7 +158,6 @@ function buildVideoHTML(src, caption) {
         </iframe>
       </div>`;
   } else {
-    // Local / GitHub raw video
     const ext = src.split('.').pop().toLowerCase();
     const mimeMap = { mp4: 'video/mp4', webm: 'video/webm', ogg: 'video/ogg', mov: 'video/quicktime' };
     const mime = mimeMap[ext] || 'video/mp4';
@@ -171,8 +182,7 @@ function buildVideoHTML(src, caption) {
 function findAdjacentPost(posts, currentSlug, direction) {
   const idx = posts.findIndex(p => p.slug === currentSlug);
   if (idx === -1) return null;
-  const target = posts[idx + direction];
-  return target || null;
+  return posts[idx + direction] || null;
 }
 
 function renderError(msg, container) {
