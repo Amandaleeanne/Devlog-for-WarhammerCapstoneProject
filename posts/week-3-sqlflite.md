@@ -43,7 +43,7 @@ Finally, as I said before, I used Gemini as a learning rubber duck. Questions su
 
 <u>Once I understood Flutter concepts a bit more</u>, I moved on to writing a few "hello world" Dart-specific programs. Basic calculators, CLI printing to do things on the screen, and looking into specific 'dart quirks,' such as its aggressive null safety.
 
-Dart is extremely object-oriented. However, it does not seem to have too many of the annoying hiccups that I have encountered with Java, and most of the design decisions within the langauge feel very intentional. The best way I can describe dart is a combination of OOP, Java, and Python concepts with a dash of Javascript added in. Mainly, It feels like a scripting langauge that is wrapped around in OOP concepts. Which is quite nice to work with, because it doesnt rely too heavily on OOP concepts that you can't do some basic scripting or functional programming. 
+Dart is extremely object-oriented. However, it does not seem to have too many of the annoying hiccups that I have encountered with Java, and most of the design decisions within the languauge feel very intentional. The best way I can describe dart is a combination of OOP, Java, and Python concepts with a dash of Javascript added in. Mainly, It feels like a scripting languauge that is wrapped around in OOP concepts. Which is quite nice to work with, because it doesnt rely too heavily on OOP concepts that you can't do some basic scripting or functional programming. 
 
 Combining all of this together, it was time to start working on the project for real.
 
@@ -112,7 +112,6 @@ Since searching by factions would complicate both the app and the database, it w
 
 
 ## The Dreaded Search Bar:
-"Talk about working in sqlflite, how I ended up breaking some of my challenge rules and then scrapping it all once I discovered I was going the wrong direction. Don't worry, I got back on track."
 
 Now that the problem of getting the data in was solved, it was time to hook up the database and get the searchbar I had drawn to the screen functional. Easy right? Wrong. What I thought was a simple package lookup turned into yet another nightmare of confusingly scrolling through docs.  The local database API I had chosen, Sqflite, which allows Flutter and SQLite to interact properly, was causing problems and not working as intended. Everything always seemed hooke up, but the way SQLite handled the database was not intuitive at all.
 
