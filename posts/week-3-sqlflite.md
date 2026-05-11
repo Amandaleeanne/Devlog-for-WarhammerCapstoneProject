@@ -113,9 +113,9 @@ Since searching by factions would complicate both the app and the database, it w
 
 ## The Dreaded Search Bar:
 
-Now that the problem of getting the data in was solved, it was time to hook up the database and get the searchbar I had drawn to the screen functional. Easy right? Wrong. What I thought was a simple package lookup turned into yet another nightmare of confusingly scrolling through docs.  The local database API I had chosen, Sqflite, which allows Flutter and SQLite to interact properly, was causing problems and not working as intended. Everything always seemed hooke up, but the way SQLite handled the database was not intuitive at all.
+Now that the problem of getting the data in was solved, it was time to hook up the database and get the searchbar I had drawn to the screen functional. Easy right? Wrong. What I thought was a simple package lookup turned into yet another nightmare of confusingly scrolling through docs.  The local database API I had chosen, Sqflite, which allows Flutter and SQLite to interact properly, was causing problems and not working as intended. Everything always seemed hooked up, but the way SQLite handled the database was not intuitive at all.
 
-So I went back to the drawing board to see if there was another API or if I needed to rethink my data layer to be cloud-based. After some searching, I luckily found a package called Drift. Once I switched and followed the steps, I was able to get the search bar working in about an hour and a half, elatedly screaming "IT WOOORKS". After which, the development of the rest of the UI flow went smoothly as I learned the Drift API.
+So I went back to the drawing board to see if there was another API or if I needed to re-think my data layer to be cloud-based. After some searching, I luckily found a package called Drift. Once I switched and followed the steps, I was able to get the search bar working in about an hour and a half, elatedly screaming "IT WOOORKS". After which, the development of the rest of the UI flow went smoothly as I learned the Drift API.
 
 Overall, this excursion cost about 15hours of my project time, with it being completed during my free time on the weekends.
 
