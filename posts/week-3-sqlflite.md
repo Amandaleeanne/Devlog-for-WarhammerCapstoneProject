@@ -58,7 +58,11 @@ Combining all of this together, it was time to start working on the project for 
 
 [Table relationships](#the-layout-of-the-database-table-relationships) 
 
-[Why it was done this way](#why-it-was-done-this-way) • [Why: Abilities](#abilities-table) • [Why: Warscrolls](#warscrolls)
+[Why it was done this way](#why-it-was-done-this-way)
+
+[Why: Abilities](#abilities-table) • [Why: Warscrolls](#warscrolls) • [Why: Spearheads](#warscrolls)
+
+[Getting the Data](#getting-the-data)
 
 </div>
 </div>
