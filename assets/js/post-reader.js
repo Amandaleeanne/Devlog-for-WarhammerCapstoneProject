@@ -45,6 +45,9 @@
   const postTitle = (meta && meta.title) || slug;
   document.title = `${postTitle} — Spearhead Companion Dev Blog`;
 
+  // Update Open Graph meta tags for Giscus
+  updateOpenGraphTags(postTitle, meta);
+
   // Configure Marked with heading IDs for anchor navigation
   marked.use({
     gfm: true,
@@ -114,6 +117,9 @@
         : '<span></span>'}
     </nav>
   `;
+
+  // Reload Giscus with updated meta tags
+  reloadGiscus();
 })();
 
 /* ─── VIDEO TOKEN PROCESSING ─────────────────────────── */
@@ -274,4 +280,80 @@ function esc(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+/* ─── OPEN GRAPH & GISCUS ────────────────────────────── */
+
+function updateOpenGraphTags(title, meta) {
+  // Update or create og:title meta tag
+  let ogTitle = document.querySelector('meta[property="og:title"]');
+  if (!ogTitle) {
+    ogTitle = document.createElement('meta');
+    ogTitle.setAttribute('property', 'og:title');
+    document.head.appendChild(ogTitle);
+  }
+  ogTitle.setAttribute('content', title);
+
+  // Update or create og:description meta tag
+  let ogDescription = document.querySelector('meta[property="og:description"]');
+  if (!ogDescription) {
+    ogDescription = document.createElement('meta');
+    ogDescription.setAttribute('property', 'og:description');
+    document.head.appendChild(ogDescription);
+  }
+  const excerpt = (meta && meta.excerpt) || 'Read the latest update on the Spearhead Companion dev blog.';
+  ogDescription.setAttribute('content', excerpt);
+
+  // Update or create og:url meta tag
+  let ogUrl = document.querySelector('meta[property="og:url"]');
+  if (!ogUrl) {
+    ogUrl = document.createElement('meta');
+    ogUrl.setAttribute('property', 'og:url');
+    document.head.appendChild(ogUrl);
+  }
+  const currentUrl = `${window.location.origin}${window.location.pathname}${window.location.search}`;
+  ogUrl.setAttribute('content', currentUrl);
+}
+
+function reloadGiscus() {
+  // Clear existing giscus iframe
+  const giscusContainer = document.querySelector('.giscus');
+  if (giscusContainer) {
+    giscusContainer.innerHTML = '';
+  }
+
+  // Reload giscus script
+  if (window.giscus) {
+    window.giscus.IFrameResizer?.q?.push([
+      {
+        id: 'giscus',
+        src: `https://giscus.app/client.js?src=${Date.now()}`,
+        async: true,
+        crossOrigin: 'anonymous'
+      }
+    ]);
+  }
+
+  // Reload the giscus script by creating a new script tag
+  const script = document.createElement('script');
+  script.src = 'https://giscus.app/client.js';
+  script.setAttribute('data-repo', 'Amandaleeanne/Devlog-for-WarhammerCapstoneProject');
+  script.setAttribute('data-repo-id', 'R_kgDOSZCkdg');
+  script.setAttribute('data-category', 'General');
+  script.setAttribute('data-category-id', 'DIC_kwDOSZCkds4C8zuh');
+  script.setAttribute('data-mapping', 'og:title');
+  script.setAttribute('data-strict', '0');
+  script.setAttribute('data-reactions-enabled', '1');
+  script.setAttribute('data-emit-metadata', '0');
+  script.setAttribute('data-input-position', 'top');
+  script.setAttribute('data-theme', 'dark');
+  script.setAttribute('data-lang', 'en');
+  script.setAttribute('data-loading', 'lazy');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.async = true;
+
+  const giscusDiv = document.querySelector('.giscus');
+  if (giscusDiv) {
+    giscusDiv.appendChild(script);
+  }
 }
