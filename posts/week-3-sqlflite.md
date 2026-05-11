@@ -164,9 +164,11 @@ With the addition of the overhead it took to write the blog, I am a bit behind o
 
 With this article done, we are all caught up in development. Going forward, articles may be a bit shorter as there will be a lot less to cover, and I hope to report on *weekly* progress instead of combining two weeks into one article.
 
-Additionally, if anyone is interested, this blog was made as a response to what my teacher for midterms week wanted. I had already been thinking of making a blog, or some sort of report, for the project anyway, and so this blog was born. I hope you have enjoyed reading up on the development so far, and here’s to next week! Feel free to ask any questions below, and I’ll get to answering when I can.
+Additionally, if anyone is interested, this blog was made as a response to what my teacher for midterms week wanted. I had already been thinking of making a blog, or some sort of report, for the project anyway, and so this blog was born. 
 
 Finally, I cannot stress how much I have enjoyed working within the Dart + Flutter ecosystem. It feels like a backend programmer's way to generate some UI, and has given me a much more gentle insight as to how UI's in general are made. I hope that after this project I can use that knowledge and re-tackle the Uno Platform or PyQT/Tkinter 
+
+I hope you have enjoyed reading up on the development so far, and here’s to next week! Feel free to ask any questions below, and I’ll get to answering when I can.
 
 ---
 
