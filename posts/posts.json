@@ -11,7 +11,7 @@
     },
     {
       "slug": "week-3-sqlflite",
-      "title": "Week 3 & 4: Learning flutter + Database hookup",
+      "title": "Week 3 & 4: Learning Flutter + Database hookup",
       "subtitle": "Hooking it all up - with the tech stack decided it was time to learn flutter and setup SQLite",
       "excerpt": "Drawing a button on screen was easy, hooking up a database proved more difficult than anticipated. Here's what happened...",
       "date": "2026-05-09",

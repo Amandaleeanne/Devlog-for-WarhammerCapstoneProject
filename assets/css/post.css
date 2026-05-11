@@ -68,7 +68,11 @@
   color: var(--text-muted);
 }
 
-.post-header-meta span { display: flex; align-items: center; gap: 6px; }
+.post-header-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
 /* ── POST BODY TYPOGRAPHY ── */
 .post-body {
@@ -77,7 +81,9 @@
   color: var(--text-primary);
 }
 
-.post-body > * + * { margin-top: 1.5em; }
+.post-body > * + * {
+  margin-top: 1.5em;
+}
 
 .post-body h1,
 .post-body h2,
@@ -89,17 +95,32 @@
   color: var(--text-primary);
 }
 
-.post-body h1 { font-size: 2rem; margin-top: 2.2em; }
+.post-body h1 {
+  font-size: 2rem;
+  margin-top: 2.2em;
+}
+
 .post-body h2 {
   font-size: 1.55rem;
   margin-top: 2em;
   padding-bottom: 0.4em;
   border-bottom: 1px solid var(--border);
 }
-.post-body h3 { font-size: 1.2rem; margin-top: 1.8em; }
-.post-body h4 { font-size: 1rem; margin-top: 1.5em; color: var(--text-secondary); }
 
-.post-body p { margin-bottom: 0; }
+.post-body h3 {
+  font-size: 1.2rem;
+  margin-top: 1.8em;
+}
+
+.post-body h4 {
+  font-size: 1rem;
+  margin-top: 1.5em;
+  color: var(--text-secondary);
+}
+
+.post-body p {
+  margin-bottom: 0;
+}
 
 .post-body a {
   color: var(--accent-light);
@@ -108,18 +129,33 @@
   text-decoration-color: rgba(231, 76, 60, 0.4);
   transition: text-decoration-color 0.2s;
 }
-.post-body a:hover { text-decoration-color: var(--accent-light); }
 
-.post-body strong { font-weight: 600; color: var(--text-primary); }
-.post-body em { font-style: italic; }
+.post-body a:hover {
+  text-decoration-color: var(--accent-light);
+}
+
+.post-body strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.post-body em {
+  font-style: italic;
+}
 
 /* ── LISTS ── */
 .post-body ul,
 .post-body ol {
   padding-left: 1.6em;
 }
-.post-body li { margin-bottom: 0.35em; }
-.post-body li::marker { color: var(--accent); }
+
+.post-body li {
+  margin-bottom: 0.35em;
+}
+
+.post-body li::marker {
+  color: var(--accent);
+}
 
 /* ── BLOCKQUOTE ── */
 .post-body blockquote {
@@ -129,6 +165,7 @@
   background: var(--accent-glow);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
+
 .post-body blockquote p {
   font-style: italic;
   color: var(--text-secondary);
@@ -154,6 +191,7 @@
   overflow-x: auto;
   margin: 1.6em 0;
 }
+
 .post-body pre code {
   background: none;
   border: none;
@@ -171,6 +209,119 @@
   margin: 0.5em 0;
 }
 
+/* ─────────────────────────────────────────
+   REUSABLE IMAGE / FIGURE SIZE CLASSES
+   ───────────────────────────────────────── */
+
+/* Base figure styling */
+.post-body figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+/* Base image styling */
+.post-body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* ── SIZE PRESETS ── */
+
+/* Small image */
+.image-small {
+  max-width: 420px;
+}
+
+/* Medium image */
+.image-medium {
+  max-width: 680px;
+}
+
+/* Large image */
+.image-large {
+  max-width: 100%;
+}
+
+/* Full-bleed wide image */
+.image-wide {
+  max-width: 1100px;
+}
+
+/* ── OPTIONAL ALIGNMENTS ── */
+
+/* Left aligned */
+.image-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Right aligned */
+.image-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 700px) {
+  .image-wide,
+  .image-large,
+  .image-medium,
+  .image-small {
+    max-width: 100%;
+  }
+
+  .image-left,
+  .image-right {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── FIGURE GRID LAYOUTS ── */
+
+.figure-grid {
+  display: grid;
+  gap: 24px;
+  margin: 2rem 0;
+  width: 100%;
+  align-items: start;
+}
+
+/* 2-column layout */
+.figure-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+}
+
+/* Centered figures inside 2-grid */
+.figure-grid-2 figure {
+  max-width: 420px;
+}
+
+/* 3-column layout */
+.figure-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+/* Grid figures should fill their cells */
+.figure-grid figure {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Grid images fill figures */
+.figure-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── HR ── */
 .post-body hr {
   border: none;
@@ -185,6 +336,7 @@
   font-size: 0.92rem;
   margin: 1.6em 0;
 }
+
 .post-body th {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -196,12 +348,16 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
 .post-body td {
   border: 1px solid var(--border);
   padding: 10px 14px;
   color: var(--text-secondary);
 }
-.post-body tr:hover td { background: var(--bg-card); }
+
+.post-body tr:hover td {
+  background: var(--bg-card);
+}
 
 /* ── VIDEO EMBEDS ── */
 .video-embed {
@@ -219,6 +375,7 @@
   align-items: center;
   gap: 8px;
 }
+
 .video-embed-label::before {
   content: '▶';
   color: var(--accent-light);
@@ -240,16 +397,31 @@
   display: block;
 }
 
-/* YouTube / iframe 16:9 */
-.video-embed-wrapper.ratio-16-9 {
-  padding-top: 56.25%;
-}
-.video-embed-wrapper.ratio-16-9 iframe {
-  position: absolute;
-  inset: 0;
+/* Shared iframe styles */
+.video-embed-wrapper iframe {
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
+}
+
+/* Standard YouTube videos */
+.video-embed-wrapper.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+/* YouTube Shorts */
+.video-embed-wrapper.ratio-9-16 {
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Mobile tweaks for Shorts */
+@media (max-width: 600px) {
+  .video-embed-wrapper.ratio-9-16 {
+    max-width: 100%;
+  }
 }
 
 /* ── FULL PAGE LOADING ── */
@@ -275,14 +447,28 @@
   transition: color 0.2s;
   max-width: 240px;
 }
-.post-nav-link:hover { color: var(--accent-light); }
-.post-nav-link.next { text-align: right; }
+
+.post-nav-link:hover {
+  color: var(--accent-light);
+}
+
+.post-nav-link.next {
+  text-align: right;
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
-  .post-article { padding: 36px var(--gutter) 60px; }
-  .post-title { font-size: 1.7rem; }
-  .post-body { font-size: 0.98rem; }
+  .post-article {
+    padding: 36px var(--gutter) 60px;
+  }
+
+  .post-title {
+    font-size: 1.7rem;
+  }
+
+  .post-body {
+    font-size: 0.98rem;
+  }
 }
 
 /* ── GISCUS COMMENTS ── */
