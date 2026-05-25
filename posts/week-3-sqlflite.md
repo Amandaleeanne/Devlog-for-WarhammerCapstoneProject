@@ -8,9 +8,7 @@
 
 [Setting up Searching](#the-dreaded-search-bar)
 
-[A Big Lesson](#a-major-lesson-pivoting)
-
-[Progress continues, Week 4](#smoother-developement)
+[What I learned](#a-major-lesson-pivoting)
 
 [Current Demo](#how-it-looks)
 
@@ -129,7 +127,7 @@ Throughout this entire project, I have felt like the sofa, and my code yelling a
 
 Having the lesson of being extremely flexible with your code and knowing exactly when it is time to step back, look at what you are doing, and decide whether or not to pursue or pivot is a skill I will keep in mind and hone more so going forward.
 
-## Smoother development
+### Smoother development
 
 After all was said and done with the database hookup, the rest of the development has been going much more smoothly. I was able to get the rest of the onboarding flow done and looking nice enough to present. 
 
