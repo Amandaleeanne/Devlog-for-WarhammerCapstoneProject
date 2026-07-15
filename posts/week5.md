@@ -93,6 +93,10 @@ Looking into more of how the queries worked, I came up with the idea to make an 
 
 Naturally, this led me to realize that with this class framework, I would no longer need a secondary SQLite database containing user data. Instead, I can make the "Favorite configuration" button grab the created class and adds it to a list of ActiveSpearhead classes. Then, the favorites page populates entries from the existing list. The same can also be said for the "Recent configurations" feature: simple, clean, and no extra hookups needed. 
 
+---
+Week 7 Editors note: This works, however please see week 7's post for a more updated idea
+---
+
 ## Testing reveals a design issue:
  While navigating the page,, I found myself wanting to tap each listed unit to display the full contents for that unit. Meaning, this was an overlooked design feature that I will have to implement for the MVP. So, I ended up changing the internals of which widget the list was populated with so that the "on-tap" feature.  Right now, the cards themselves aren't tappable yet, but I plan on implementing the "on-Tap" next week, along with the carousel.
 
@@ -145,4 +149,4 @@ Additionally, after the toils and struggles of the first couple of weeks, it fee
 
 Here’s to next week! Feel free to ask any questions or post comments below, and I’ll get to answering when I can.
 
-*This devlog is updated weekly. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*
+*This devlog is "weekly" updated as the project updates. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*

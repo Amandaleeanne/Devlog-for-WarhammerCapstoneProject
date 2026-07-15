@@ -27,6 +27,15 @@
       "tag": "Design & Functionality",
       "hasVideo": true
     }
+    {
+      "slug": "week7",
+      "title": "Week 7: The Final Week - Wrapping up the project(?)",
+      "subtitle": "Squashing bugs, adding finishing touches, and preparing for the final presentation",
+      "excerpt": "Development was finally on an uptick, little did I know this was the final week of the offical project and I would have to present!",
+      "date": "2026-06-23",
+      "tag": "Bugs, Polishing & Post-Mortem",
+      "hasVideo": true
+    }
   ]
 }
 

@@ -238,4 +238,4 @@ Here’s to next week! Feel free to ask any questions below, and I’ll get to a
 
 ---
 
-*This devlog is updated weekly. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*
+*This devlog is "weekly" updated as the project updates. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*

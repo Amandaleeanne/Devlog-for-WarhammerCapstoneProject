@@ -172,4 +172,4 @@ I hope you have enjoyed reading up on the development so far, and here’s to ne
 
 *[Checkout the amazing SQlite database and ER diagram viewer I found!](https://fasttools.dev/en/sql-playground)*
 
-*This devlog is updated weekly. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*
+*This devlog is "weekly" updated as the project updates. Follow along on* *[GitHub](https://github.com)*. *Hope to see you soon!*
